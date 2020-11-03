@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-jenkins
+  namespace: jenkins
+  annotations: 
+    kubernetes.io/ingress.class: "nginx"
+    #kubernetes.io/ingress.global-static-ip-name: loadbalancer-gke
+    #kubernetes.io/ingress.class: "traefik-internal"
+    #cloud.google.com/load-balancer-type: "External"
+spec:
+  #tls:
+  #- hosts:
+  #  - jenkins-aks.sopradigitalfactory.com
+  #  secretName: jenkins-certificate
+  rules:
+  - host: jenkins.devopstech.org
+    http:
+      paths:
+      - backend:
+          serviceName: jenkins
+          servicePort: 8080
+        path: /
