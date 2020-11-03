@@ -38,3 +38,5 @@ override.tf.json
 
 # GCP service account json file
 account.json 
+
+README.md.progress
