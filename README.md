@@ -12,11 +12,11 @@ export GOOGLE_APPLICATION_CREDENTIALS=account.json
 
 Build your own kubernetes cluster with GCP provider.
 
-# Enable Kubernetes Engine API to allow access to your cluster with kubeconfig and kubectl cli
+# Enable Kubernetes Engine API to allow access to your cluster with kubeconfig and kubectl cli  
 
 gcloud container clusters get-credentials k8s-dani --zone europe-west1-c --project yourproject_id
 
-# ENABLE Google Container Registry API
+# ENABLE Google Container Registry API  
 gcloud auth configure-docker
 
 # Pushing images to GCR
@@ -31,11 +31,11 @@ output "gcr_location" {
 }
 ```
 
-# GCP REGIONS
+# GCP REGIONS  
 
 https://cloud.google.com/compute/docs/regions-zones
 
-# How to use 
+# How to use   
 
 ## Create tfstate bucket
 terraform plan --target google_storage_bucket.gcs_tfstate --out tfplan1.tfplan 
